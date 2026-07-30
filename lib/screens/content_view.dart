@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../data/fruits_data.dart';
 import '../models/fruit.dart';
@@ -68,8 +69,11 @@ class _ContentViewState extends State<ContentView> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.of(context).push(
+                  onPressed: () async {
+                    final prefs = await SharedPreferences.getInstance();
+                    await prefs.setBool('seenOnboarding', true);
+                    if (!context.mounted) return;
+                    Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) => const FruitListView(),
                       ),
