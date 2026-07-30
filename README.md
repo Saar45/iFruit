@@ -2,6 +2,8 @@
 
 A Flutter app to discover 13 fruits: browse the list, open a fruit and learn everything about it (description and nutrition facts).
 
+A short demo video is available in [demo.mp4](demo.mp4).
+
 ## Screens
 
 | Welcome | Fruit list | Fruit detail | Settings |
