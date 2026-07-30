@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'data/fruits_data.dart';
+import 'screens/content_view.dart';
 
 void main() {
   runApp(const IFruitApp());
@@ -18,9 +18,7 @@ class IFruitApp extends StatelessWidget {
         colorSchemeSeed: Colors.green,
         useMaterial3: true,
       ),
-      home: Scaffold(
-        body: Center(child: Text('${fruits.length} fruits loaded')),
-      ),
+      home: const ContentView(),
     );
   }
 }
